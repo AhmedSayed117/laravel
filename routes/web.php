@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Front\FirstController;
+use App\Http\Controllers\Front\NewsController;
+use App\Http\Controllers\Front\PhotoController;
+use App\Http\Controllers\Front\IndexController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[IndexController::class ,"homepage"]);
+
+
+
+//Route::group(['prefix' => 'users'],function(){
+//    Route::get("/",[FirstController::class,"showstring"]);
+//});
+
+
+Route::resource('news',NewsController::class);
+Route::resource('photo',PhotoController::class);
+
+Route::get('get/{id}',[NewsController::class,"shownews"])->name('name');

@@ -128,5 +128,11 @@
                 </div>
             </div>
         </div>
+
+{{--            --}}{{--   text --}}
+{{--        <div class="test">--}}
+{{--            <a href="{{route("first",55)}}">first</a>--}}
+{{--            <a href="{{route("second",50)}}">second</a>--}}
+{{--        </div>--}}
     </body>
 </html>
